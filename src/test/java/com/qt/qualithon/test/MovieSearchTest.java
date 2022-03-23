@@ -141,14 +141,14 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectGenres(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
-
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
+        List<String> sortedList = movieOnImdbWeb.genres().stream().sorted().collect(Collectors.toList());
+        assertThat(sortedList).isEqualTo(movie.genres());
     }
 
     /**

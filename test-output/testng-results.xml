@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-23T20:56:02 IST" name="Default suite" finished-at="2022-03-23T20:56:38 IST" duration-ms="36506">
+  <suite started-at="2022-03-23T21:31:57 IST" name="Default suite" finished-at="2022-03-23T21:32:34 IST" duration-ms="36681">
     <groups>
     </groups>
-    <test started-at="2022-03-23T20:56:02 IST" name="Default test" finished-at="2022-03-23T20:56:38 IST" duration-ms="36506">
+    <test started-at="2022-03-23T21:31:57 IST" name="Default test" finished-at="2022-03-23T21:32:34 IST" duration-ms="36681">
       <class name="com.qt.qualithon.test.MovieSearchTest">
-        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T20:56:02 IST" name="testSessionSetUp" finished-at="2022-03-23T20:56:04 IST" duration-ms="2676" status="PASS">
+        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T21:31:57 IST" name="testSessionSetUp" finished-at="2022-03-23T21:32:00 IST" duration-ms="2930" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSessionSetUp -->
-        <test-method signature="testMovieMetadataOnWebHasCorrectWriters(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T20:56:04 IST" name="testMovieMetadataOnWebHasCorrectWriters" data-provider="popularMovieTitles" finished-at="2022-03-23T20:56:19 IST" duration-ms="15149" status="PASS">
+        <test-method signature="testMovieMetadataOnWebHasCorrectGenres(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T21:32:00 IST" name="testMovieMetadataOnWebHasCorrectGenres" data-provider="popularMovieTitles" finished-at="2022-03-23T21:32:15 IST" duration-ms="14905" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,16 +21,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMovieMetadataOnWebHasCorrectWriters -->
-        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T20:56:19 IST" name="testTearDown" finished-at="2022-03-23T20:56:20 IST" duration-ms="650" status="PASS">
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectGenres -->
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T21:32:15 IST" name="testTearDown" finished-at="2022-03-23T21:32:16 IST" duration-ms="612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->
-        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T20:56:20 IST" name="testSessionSetUp" finished-at="2022-03-23T20:56:22 IST" duration-ms="1786" status="PASS">
+        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T21:32:16 IST" name="testSessionSetUp" finished-at="2022-03-23T21:32:17 IST" duration-ms="1651" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSessionSetUp -->
-        <test-method signature="testMovieMetadataOnWebHasCorrectWriters(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T20:56:22 IST" name="testMovieMetadataOnWebHasCorrectWriters" data-provider="popularMovieTitles" finished-at="2022-03-23T20:56:37 IST" duration-ms="15591" status="FAIL">
+        <test-method signature="testMovieMetadataOnWebHasCorrectGenres(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T21:32:17 IST" name="testMovieMetadataOnWebHasCorrectGenres" data-provider="popularMovieTitles" finished-at="2022-03-23T21:32:33 IST" duration-ms="15921" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,57 +38,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Could not lookup Writers on movie page
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'QT-INNO-LT1449', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: driver.version: unknown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Could not lookup Writers on movie page
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.1.2', revision: '9a5a329c5a'
-System info: host: 'QT-INNO-LT1449', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
-Driver info: driver.version: unknown
-at com.qt.qualithon.ui.imdb.MoviePage.writers(MoviePage.java:124)
-at com.qt.qualithon.test.MovieSearchTest.testMovieMetadataOnWebHasCorrectWriters(MovieSearchTest.java:127)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMovieMetadataOnWebHasCorrectWriters -->
-        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T20:56:37 IST" name="testTearDown" finished-at="2022-03-23T20:56:38 IST" duration-ms="612" status="PASS">
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectGenres -->
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@10feca44]" started-at="2022-03-23T21:32:33 IST" name="testTearDown" finished-at="2022-03-23T21:32:34 IST" duration-ms="619" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->

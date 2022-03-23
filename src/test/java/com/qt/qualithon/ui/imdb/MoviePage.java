@@ -73,6 +73,23 @@ public class MoviePage extends Page{
      **/
     public List<String> genres(){
         List<String> genres = new ArrayList<>();
+        List<WebElement> credits = this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(
+                  By.cssSelector("li.ipc-metadata-list__item")));
+
+            // traverse credits sections to find the section with Writers
+            for(WebElement credit:credits){
+                try{
+                    if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Genres")){
+                        // traverse list of writers on page to add to writers list
+                        List<WebElement> genresElements = credit.findElements(By.cssSelector("a"));
+                        for(int i = genresElements.size()-1; i >= 0 ; i--){
+                        	genres.add(genresElements.get(i).getText());
+                        }
+                        break;
+                    }
+                }catch(NoSuchElementException e){}
+            }
         
         // if genres list is empty throw exception
         if(genres.isEmpty()){

@@ -9,46 +9,11 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">36,506</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">36,681</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qt.qualithon.test.MovieSearchTest</td><td><a href="#m0">testMovieMetadataOnWebHasCorrectWriters</a></td><td rowspan="1">1648049182346</td><td rowspan="1">15591</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qt.qualithon.test.MovieSearchTest</td><td><a href="#m1">testMovieMetadataOnWebHasCorrectWriters</a></td><td rowspan="1">1648049164756</td><td rowspan="1">15149</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.qt.qualithon.test.MovieSearchTest</td><td><a href="#m0">testMovieMetadataOnWebHasCorrectGenres</a></td><td rowspan="2">1648051337823</td><td rowspan="2">15921</td></tr><tr class="passedeven"><td><a href="#m1">testMovieMetadataOnWebHasCorrectGenres</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.qt.qualithon.test.MovieSearchTest#testMovieMetadataOnWebHasCorrectWriters</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>The Dark Knight Rises</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Could not lookup Writers on movie page
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;QT-INNO-LT1449&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
-Driver info: driver.version: unknown
-	at com.qt.qualithon.ui.imdb.MoviePage.writers(MoviePage.java:124)
-	at com.qt.qualithon.test.MovieSearchTest.testMovieMetadataOnWebHasCorrectWriters(MovieSearchTest.java:127)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.qt.qualithon.test.MovieSearchTest#testMovieMetadataOnWebHasCorrectWriters</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>A Clockwork Orange</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">com.qt.qualithon.test.MovieSearchTest#testMovieMetadataOnWebHasCorrectGenres</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>The Dark Knight Rises</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.qt.qualithon.test.MovieSearchTest#testMovieMetadataOnWebHasCorrectGenres</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>A Clockwork Orange</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
