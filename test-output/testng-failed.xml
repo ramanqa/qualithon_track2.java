@@ -6,7 +6,7 @@
       <class name="com.qt.qualithon.test.MovieSearchTest">
         <methods>
           <include name="testSessionSetUp"/>
-          <include name="testMovieMetadataOnWebHasCorrectReleaseYear" invocation-numbers="0 1"/>
+          <include name="testMovieMetadataOnWebHasCorrectDirectorName" invocation-numbers="0 1"/>
           <include name="testTearDown"/>
         </methods>
       </class> <!-- com.qt.qualithon.test.MovieSearchTest -->
