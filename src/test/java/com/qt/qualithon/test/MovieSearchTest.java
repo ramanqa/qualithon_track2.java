@@ -81,7 +81,8 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.releaseYear()).isEqualTo(movie.releaseYear());
+        String[] years = movieOnImdbWeb.releaseYear().split("\n");
+        assertThat(years[0]).isEqualTo(movie.releaseYear());
     }
 
     /**
