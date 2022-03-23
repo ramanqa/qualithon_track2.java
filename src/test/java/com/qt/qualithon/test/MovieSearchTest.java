@@ -1,6 +1,8 @@
 package com.qt.qualithon.test;
 
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.testng.annotations.*;
 import org.testng.Reporter;
@@ -122,7 +124,11 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
+        System.out.println("AAAA"+movieOnImdbWeb.writers());
+        System.out.println("BBBB"+movie.writers());
+        List<String> sortedList = movie.writers().stream().sorted().collect(Collectors.toList()); 
+        System.out.println("ABC"+sortedList);
+        assertThat(movieOnImdbWeb.writers()).isEqualTo(sortedList);
     }
 
     /**
