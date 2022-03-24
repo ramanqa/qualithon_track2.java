@@ -171,12 +171,22 @@ public class Movie{
 	}
 	
 	
-	
+	/**
+	 * get imdb movie rating 
+	 * 
+	 * @return movie review rating 
+	 */
 	public String reviewRating() {
 		//System.out.println(reviewRating);
 		return reviewRating;
 	}
-
+	
+	
+	/**
+	 * set imdb movie rating
+	 * 
+	 * @param jsonArray ratings array
+	 */
 	public void setReviewRating(JSONArray jsonArray) {
 		JSONObject obj = (JSONObject) jsonArray.get(0);
 		this.reviewRating = obj.getString("Value");
@@ -196,8 +206,5 @@ public class Movie{
     }
 
     
-	public String movieRating() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
