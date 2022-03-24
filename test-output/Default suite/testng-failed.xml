@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qt.qualithon.test.MovieSearchTest">
+      <class name="com.qt.qualithon.test.MovieSearchRottenTomatoesTest">
         <methods>
+          <include name="testMovieMetadataOnWebHasCorrectDirectorName" invocation-numbers="0"/>
           <include name="testSessionSetUp"/>
           <include name="testTearDown"/>
-          <include name="testMovieMetadataOnWebHasCorrectMovieRatingScore" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.qt.qualithon.test.MovieSearchTest -->
+      </class> <!-- com.qt.qualithon.test.MovieSearchRottenTomatoesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
