@@ -155,5 +155,19 @@ public class MoviePage extends Page{
                 ) 
             ).getText();
         }
+    
+    /**
+     * get   movie rating score
+     * 
+     * @return movie rating score
+     */
+    public String movieRating() {
+    	
+    	return this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfElementLocated(
+                        By.cssSelector("div[class='sc-f6306ea-0 cNGXvE rating-bar__base-button']")
+                    ) 
+                ).getText();
+    }
 
 }
