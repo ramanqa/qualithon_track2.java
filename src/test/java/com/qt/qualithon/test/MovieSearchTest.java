@@ -124,10 +124,7 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        System.out.println("AAAA"+movieOnImdbWeb.writers());
-        System.out.println("BBBB"+movie.writers());
         List<String> sortedList = movie.writers().stream().sorted().collect(Collectors.toList()); 
-        System.out.println("ABC"+sortedList);
         assertThat(movieOnImdbWeb.writers()).isEqualTo(sortedList);
     }
 
@@ -160,8 +157,16 @@ public class MovieSearchTest {
      **/
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+        // get MoviePage from imdb/rottentomato
+    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    			.launch()
+    			.search(title)
+    			.firstMovieResult();
+    	
+    	//get Movie metadata from http://www.omdbapi.com/
+    	Movie movie = new OMDbAPI().getMovie(title);
+    	String[] maturity = movieOnImdbWeb.maturityRating().split("\n");
+    	assertThat(maturity[1]).isEqualTo(movie.maturityRating());
     }
 
     /**

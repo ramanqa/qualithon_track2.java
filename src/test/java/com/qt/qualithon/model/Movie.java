@@ -12,6 +12,7 @@ public class Movie{
     String title;
     String releaseYear;
     String director;
+    String maturityRating;
     List<String> genres;
     List<String> writers;
 
@@ -139,6 +140,22 @@ public class Movie{
      **/
     public List<String> writers(){
         return this.writers;
+    }
+    /**
+     * set movie maturity rating
+     * 
+     * @param   maturityRating    movie maturity rating
+     **/
+    public void setMaturityRating(String maturityRating) {
+    	this.maturityRating = maturityRating;
+    }
+    /**
+     * get movie maturity rating
+     * 
+     * @return  movie maturity rating
+     */
+    public String maturityRating(){
+    	return this.maturityRating;
     }
 
     /**

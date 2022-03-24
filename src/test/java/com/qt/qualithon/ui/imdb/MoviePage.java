@@ -142,5 +142,18 @@ public class MoviePage extends Page{
         }
         return writers;
     }
+    
+    /**
+     * get maturity ratings of the movie
+     * 
+     * @return maturity ratings
+     **/
+    public String maturityRating(){
+        return this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfElementLocated(
+                    By.cssSelector("ul[data-testid='hero-title-block__metadata']")
+                ) 
+            ).getText();
+        }
 
 }
