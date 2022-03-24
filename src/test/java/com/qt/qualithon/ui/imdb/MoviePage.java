@@ -11,6 +11,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.SearchContext;
 
 import java.util.List;
+import java.util.function.IntPredicate;
 import java.util.ArrayList;
 
 /**
@@ -145,5 +146,35 @@ public class MoviePage extends Page{
         }
         return writers;
     }
+    
+    
+    /**
+     * get movie maturity rating
+     *
+     * @return    movie maturity rating
+     **/
+    public String rating(){
+        return this.testSession.driverWait().until(
+            ExpectedConditions.presenceOfElementLocated(            		
+                By.xpath("//ul[@data-testid='hero-title-block__metadata']/li[2]/a[1]")
+            ) 
+        ).getText();
+    }
+
+    
+    
+    /**
+     * get movie imdb rating 
+     * 
+     * @return  movie imdb rating
+     */
+	public String reviewRating() {
+		// TODO Auto-generated method stub
+		return this.testSession.driverWait().until(
+			ExpectedConditions.presenceOfElementLocated(            		
+	            By.cssSelector(".sc-7ab21ed2-2.kYEdvH")
+	        ) 
+	    ).getText().replaceAll("[\\n\\t ]", "");
+	}
 
 }
