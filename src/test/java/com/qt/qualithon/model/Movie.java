@@ -2,6 +2,8 @@ package com.qt.qualithon.model;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Movie model represents the metadata of any movie
@@ -12,6 +14,7 @@ public class Movie{
     String title;
     String releaseYear;
     String director;
+    String rating;
     List<String> genres;
     List<String> writers;
 
@@ -70,6 +73,14 @@ public class Movie{
     public String director(){
         return this.director;
     }
+    /////////////test case????///////////////////////
+    public String rating(){
+        return this.rating;
+    }
+    public void setRating(String rating)
+    {
+        this.rating = rating;
+    }
 
     /**
      * set movie genre list
@@ -88,6 +99,7 @@ public class Movie{
         for(String genre:commaSeperatedGenres.split(",")){
             this.genres.add(genre.trim());
         }
+        Collections.sort(this.genres);
     }
     /**
      * add movie genre to movie geres list
@@ -141,6 +153,7 @@ public class Movie{
         return this.writers;
     }
 
+
     /**
      * a pretty formated representation of movie metadata
      *
@@ -150,6 +163,7 @@ public class Movie{
       return "Title: " + this.title + " (" + this.releaseYear + ")" + "\n"
             +"Director: " + this.director + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
-            +"Writers: " + String.join(",", this.writers); 
+            +"Writers: " + String.join(",", this.writers) + "\n"
+            +"Rating: "+ this.rating; 
     }
 }

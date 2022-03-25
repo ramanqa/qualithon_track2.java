@@ -12,7 +12,7 @@ public class TestSession {
     public static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
     public TestSession(WebDriver driver){
-        this.webDriver.set(driver);
+        TestSession.webDriver.set(driver);
     }
 
     /**
@@ -21,7 +21,7 @@ public class TestSession {
      * @return    webdriver instance of browser
      **/
     public WebDriver driver(){
-        return this.webDriver.get();
+        return TestSession.webDriver.get();
     }
 
     /**
@@ -30,6 +30,7 @@ public class TestSession {
      * @param     forSeconds    seconds to wait
      * @return    webdriver wait instance
      **/
+    @Deprecated
     public WebDriverWait driverWait(long forSeconds){
         return new WebDriverWait(this.driver(), forSeconds);
     }
