@@ -12,6 +12,8 @@ public class Movie{
     String title;
     String releaseYear;
     String director;
+    String maturityRating;
+    String movieRating;
     List<String> genres;
     List<String> writers;
 
@@ -140,6 +142,40 @@ public class Movie{
     public List<String> writers(){
         return this.writers;
     }
+    /**
+     * set movie maturity rating
+     * 
+     * @param   maturityRating    movie maturity rating
+     **/
+    public void setMaturityRating(String maturityRating) {
+    	this.maturityRating = maturityRating;
+    }
+    /**
+     * get movie maturity rating
+     * 
+     * @return  movie maturity rating
+     */
+    public String maturityRating(){
+    	return this.maturityRating;
+    }
+    
+    /**
+     * set movie rating score
+     * 
+     * @param   movieRating   movie rating score
+     **/
+    public void setMovieRating(String movieRating) {
+    	this.movieRating = movieRating;
+    }
+    
+    /**
+     * get movie rating score
+     * 
+     * @return  movie rating score
+     **/
+    public String movieRating(){
+    	return this.movieRating;
+    }
 
     /**
      * a pretty formated representation of movie metadata
@@ -147,7 +183,7 @@ public class Movie{
      * @return    pretty formated movie metadata
      **/
     public String toString(){
-      return "Title: " + this.title + " (" + this.releaseYear + ")" + "\n"
+      return "Title: " + this.title + " (" + this.releaseYear + ")" + "  Maturity Rating: " + this.maturityRating + "\n"
             +"Director: " + this.director + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
             +"Writers: " + String.join(",", this.writers); 

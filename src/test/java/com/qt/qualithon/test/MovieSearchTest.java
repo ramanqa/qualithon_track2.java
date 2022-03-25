@@ -1,6 +1,8 @@
 package com.qt.qualithon.test;
 
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.testng.annotations.*;
 import org.testng.Reporter;
@@ -54,6 +56,7 @@ public class MovieSearchTest {
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
+    //This TestCase Worked absolutely fine.
     public void testSearchByExactMovieTitleReturnsMovieAsFirstResult(String title){
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -72,6 +75,7 @@ public class MovieSearchTest {
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
+    //This TestCase had one problem fixed on line number 88
     public void testMovieMetadataOnWebHasCorrectReleaseYear(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -81,7 +85,8 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.releaseYear()).isEqualTo(movie.releaseYear());
+        String[] years = movieOnImdbWeb.releaseYear().split("\n");// to fix the problem string had to be trimmed to find useful data
+        assertThat(years[0]).isEqualTo(movie.releaseYear());
     }
 
     /**
@@ -92,6 +97,7 @@ public class MovieSearchTest {
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
+    // This testcase had a problem due to code written in OMDbAPI,java file 
     public void testMovieMetadataOnWebHasCorrectDirectorName(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -112,6 +118,7 @@ public class MovieSearchTest {
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
+    //This testcase had a problem that is fixed on line number 131
     public void testMovieMetadataOnWebHasCorrectWriters(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -121,7 +128,8 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
+        List<String> sortedList = movie.writers().stream().sorted().collect(Collectors.toList()); // here the list had to be sorted
+        assertThat(movieOnImdbWeb.writers()).isEqualTo(sortedList);
     }
 
     /**
@@ -134,14 +142,14 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectGenres(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
-
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
+        List<String> sortedList = movieOnImdbWeb.genres().stream().sorted().collect(Collectors.toList());
+        assertThat(sortedList).isEqualTo(movie.genres());
     }
 
     /**
@@ -152,9 +160,18 @@ public class MovieSearchTest {
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
+    //Newly created TestCase
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+        // get MoviePage from imdb/rottentomato
+    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    			.launch()
+    			.search(title)
+    			.firstMovieResult();
+    	
+    	//get Movie metadata from http://www.omdbapi.com/
+    	Movie movie = new OMDbAPI().getMovie(title);
+    	String[] maturity = movieOnImdbWeb.maturityRating().split("\n");
+    	assertThat(maturity[1]).isEqualTo(movie.maturityRating());
     }
 
     /**
@@ -165,8 +182,18 @@ public class MovieSearchTest {
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
+    //Newly Created TestCase
     public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+        // get MoviePage from imdb/rottentomato
+    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    			.launch()
+    			.search(title)
+    			.firstMovieResult();
+    	
+
+    	// get Movie metadata from http://www.omdbapi.com/
+    	Movie movie = new OMDbAPI().getMovie(title);
+    	String[] rating = movieOnImdbWeb.movieRating().split("\n");
+    	assertThat(rating[1]).isEqualTo(movie.movieRating());
     }
 }
