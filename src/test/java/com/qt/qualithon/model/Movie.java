@@ -1,6 +1,10 @@
 package com.qt.qualithon.model;
 
 import java.util.List;
+
+import kong.unirest.json.JSONArray;
+import kong.unirest.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -14,8 +18,14 @@ public class Movie{
     String director;
     List<String> genres;
     List<String> writers;
+    String rating ;
+    //String reviewRating ;
+    JSONArray reviewRating ;
+    
 
-    public Movie(){
+	
+
+	public Movie(){
         this.genres = new ArrayList<>();
         this.writers = new ArrayList<>();
     }
@@ -140,6 +150,59 @@ public class Movie{
     public List<String> writers(){
         return this.writers;
     }
+    
+    /**
+     * get movie rating 
+     * 
+     * @return	movie rating
+     */
+    public String rating() {
+		return rating;
+	}
+    
+    
+    /**
+     * set movie rating 
+     * 
+     * @param rating movie rating
+     */
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
+	
+	
+	/**
+	 * get movie rating 
+	 * 
+	 * @return movie review rating 
+	 */
+	public String reviewRating(String source) {
+		//System.out.println(reviewRating);
+		String review = null ;
+		for(int i = 0; i< reviewRating.length();i++ ) {
+			JSONObject obj = (JSONObject) reviewRating.get(i);
+			
+			if(obj.getString("Source").equalsIgnoreCase(source)) {
+				review = obj.getString("Value");
+			} 
+		}
+		
+		return review;
+	}
+	
+	
+	/**
+	 * set  movie rating
+	 * 
+	 * @param jsonArray ratings array
+	 */
+	public void setReviewRating(JSONArray jsonArray) {
+	
+		//JSONObject obj = (JSONObject) jsonArray.get(0);
+		//this.reviewRating = obj.getString("Value");
+		this.reviewRating = jsonArray ;
+	}
+	
 
     /**
      * a pretty formated representation of movie metadata
@@ -152,4 +215,7 @@ public class Movie{
             +"Genres: " + String.join(",", this.genres) + "\n" 
             +"Writers: " + String.join(",", this.writers); 
     }
+
+    
+	
 }

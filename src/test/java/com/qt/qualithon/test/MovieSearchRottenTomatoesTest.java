@@ -8,7 +8,7 @@ import org.testng.Reporter;
 import static org.assertj.core.api.Assertions.*;
 
 import com.qt.qualithon.TestSession;
-import com.qt.qualithon.ui.imdb.*;
+import com.qt.qualithon.ui.rt.*;
 import com.qt.qualithon.model.Movie;
 import com.qt.qualithon.api.omdb.*;
 
@@ -16,7 +16,7 @@ import com.qt.qualithon.api.omdb.*;
  * Test movie web page on imdb and rottentomato to check if the movie data is correct 
  * compared to OMDb http://www.omdbapi.com/
  **/
-public class MovieSearchTest {
+public class MovieSearchRottenTomatoesTest {
 
     public TestSession testSession;
 
@@ -58,13 +58,15 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testSearchByExactMovieTitleReturnsMovieAsFirstResult(String title){
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
-        assertThat(movieOnImdbWeb.title()).isEqualTo(title);
+        assertThat(movieOnRtWeb.title()).isEqualToIgnoringCase(title);
     }
+    
+    
 
     /**
      * test that release year on movie page is correct compared to the 
@@ -76,14 +78,14 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectReleaseYear(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.releaseYear()).isEqualTo(movie.releaseYear());
+        assertThat(movieOnRtWeb.releaseYear()).isEqualTo(movie.releaseYear());
     }
 
     /**
@@ -96,14 +98,14 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectDirectorName(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.director()).isEqualTo(movie.director());
+        assertThat(movieOnRtWeb.director()).isEqualTo(movie.director());
     }
 
     /**
@@ -116,14 +118,14 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectWriters(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
+        assertThat(movieOnRtWeb.writers()).isEqualTo(movie.writers());
     }
 
     /**
@@ -136,14 +138,14 @@ public class MovieSearchTest {
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectGenres(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
+        assertThat(movieOnRtWeb.genres()).isEqualTo(movie.genres());
     }
 
     /**
@@ -157,14 +159,14 @@ public class MovieSearchTest {
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
         // NOT IMPLEMENTED
     	// get MoviePage from imdb/rottentomato
-    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    	MoviePage movieOnRtWeb = new WebApp(this.testSession)
     	            .launch()
     	            .search(title)
     	            .firstMovieResult();
 
     	// get Movie metadata from http://www.omdbapi.com/
     	Movie movie = new OMDbAPI().getMovie(title);
-    	assertThat(movieOnImdbWeb.rating()).isEqualTo(movie.rating());
+    	assertThat(movieOnRtWeb.rating()).isEqualTo(movie.rating());
     	
        // throw new Exception("Test Pending");
     }
@@ -182,16 +184,17 @@ public class MovieSearchTest {
     	
     	
     	// get MoviePage from imdb/rottentomato
-    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    	MoviePage movieOnRtWeb = new WebApp(this.testSession)
     	            .launch()
     	            .search(title)
     	            .firstMovieResult();
 
     	// get Movie metadata from http://www.omdbapi.com/
     	Movie movie = new OMDbAPI().getMovie(title);
-    	assertThat(movieOnImdbWeb.reviewRating()).isEqualTo(movie.reviewRating("Internet Movie Database"));
+    	assertThat(movieOnRtWeb.reviewRating()).isEqualTo(movie.reviewRating("Rotten Tomatoes"));
     	
     	
         //throw new Exception("Test Pending");
     }
+    
 }

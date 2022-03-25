@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.qt.qualithon.test.MovieSearchRottenTomatoesTest">
+        <methods>
+          <include name="testMovieMetadataOnWebHasCorrectReleaseYear" invocation-numbers="1"/>
+          <include name="testSessionSetUp"/>
+          <include name="testMovieMetadataOnWebHasCorrectWriters" invocation-numbers="1"/>
+          <include name="testTearDown"/>
+          <include name="testMovieMetadataOnWebHasCorrectGenres" invocation-numbers="0 1"/>
+          <include name="testMovieMetadataOnWebHasCorrectMaturityRating" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qt.qualithon.test.MovieSearchRottenTomatoesTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
