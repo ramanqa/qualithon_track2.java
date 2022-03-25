@@ -65,7 +65,7 @@ public class TestSession {
      * @return    instance of TestSession with local google chrome browser
      **/
     public static TestSession ChromeTestSession(){
-    	System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver and Selenium server\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", "C:\Users\vicky.bhatia\eclipse-workspace\qualithon_track2\src\test\resources\chromedriver.exe");
         return new TestSession(new ChromeDriver());
     }
 
