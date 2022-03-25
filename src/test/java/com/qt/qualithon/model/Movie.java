@@ -10,8 +10,10 @@ import java.util.ArrayList;
 public class Movie{
 
     String title;
-    String releaseYear;
-    String director;
+ 	String releaseYear;
+    String maturityRating;
+    String movieRating;
+	String director;
     List<String> genres;
     List<String> writers;
 
@@ -36,7 +38,7 @@ public class Movie{
     public String title(){
         return this.title;
     }
-
+    
     /**
      * set movie release year
      *
@@ -52,6 +54,21 @@ public class Movie{
      **/
     public String releaseYear(){
         return this.releaseYear;
+    }
+    
+    public void setMaturityRating(String maturityRating) {
+    	this.maturityRating = maturityRating;
+    }
+
+    public String MaturityRating() {
+    	return this.maturityRating;
+    }
+    
+    public void setMovieRating(String movieRating) {
+		this.movieRating = movieRating;
+	}
+    public String MovieRating() {
+    	return this.movieRating;
     }
 
     /**
@@ -148,8 +165,9 @@ public class Movie{
      **/
     public String toString(){
       return "Title: " + this.title + " (" + this.releaseYear + ")" + "\n"
+      		+ "Maturity Rating: " + this.maturityRating + "\n"
             +"Director: " + this.director + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
-            +"Writers: " + String.join(",", this.writers); 
+            +"Writers: " + String.join(",", this.writers);
     }
 }
