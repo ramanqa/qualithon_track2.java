@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="14" passed="14">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="248546" started-at="2022-03-25T18:58:11 IST" finished-at="2022-03-25T19:02:20 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="248546" started-at="2022-03-25T18:58:11 IST" finished-at="2022-03-25T19:02:20 IST">
+      <class name="com.qt.qualithon.test.MovieSearchTest">
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="14286" started-at="2022-03-25T18:58:11 IST" finished-at="2022-03-25T18:58:26 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testSearchByExactMovieTitleReturnsMovieAsFirstResult(java.lang.String)[pri:1, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSearchByExactMovieTitleReturnsMovieAsFirstResult" duration-ms="11879" started-at="2022-03-25T18:58:26 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T18:58:38 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchByExactMovieTitleReturnsMovieAsFirstResult -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="988" started-at="2022-03-25T18:58:38 IST" finished-at="2022-03-25T18:58:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="12026" started-at="2022-03-25T18:58:39 IST" finished-at="2022-03-25T18:58:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testSearchByExactMovieTitleReturnsMovieAsFirstResult(java.lang.String)[pri:1, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSearchByExactMovieTitleReturnsMovieAsFirstResult" duration-ms="11179" started-at="2022-03-25T18:58:51 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T18:59:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchByExactMovieTitleReturnsMovieAsFirstResult -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="977" started-at="2022-03-25T18:59:02 IST" finished-at="2022-03-25T18:59:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="12003" started-at="2022-03-25T18:59:03 IST" finished-at="2022-03-25T18:59:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectReleaseYear(java.lang.String)[pri:2, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectReleaseYear" duration-ms="13095" started-at="2022-03-25T18:59:15 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T18:59:28 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectReleaseYear -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="931" started-at="2022-03-25T18:59:28 IST" finished-at="2022-03-25T18:59:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2133" started-at="2022-03-25T18:59:29 IST" finished-at="2022-03-25T18:59:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectReleaseYear(java.lang.String)[pri:2, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectReleaseYear" duration-ms="12999" started-at="2022-03-25T18:59:31 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T18:59:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectReleaseYear -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="980" started-at="2022-03-25T18:59:44 IST" finished-at="2022-03-25T18:59:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2125" started-at="2022-03-25T18:59:45 IST" finished-at="2022-03-25T18:59:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectDirectorName(java.lang.String)[pri:3, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectDirectorName" duration-ms="12224" started-at="2022-03-25T18:59:47 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T18:59:59 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectDirectorName -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="980" started-at="2022-03-25T18:59:59 IST" finished-at="2022-03-25T19:00:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2213" started-at="2022-03-25T19:00:00 IST" finished-at="2022-03-25T19:00:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectDirectorName(java.lang.String)[pri:3, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectDirectorName" duration-ms="12131" started-at="2022-03-25T19:00:02 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:00:15 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectDirectorName -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1153" started-at="2022-03-25T19:00:15 IST" finished-at="2022-03-25T19:00:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2329" started-at="2022-03-25T19:00:16 IST" finished-at="2022-03-25T19:00:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectWriters(java.lang.String)[pri:4, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectWriters" duration-ms="11582" started-at="2022-03-25T19:00:18 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:00:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectWriters -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1024" started-at="2022-03-25T19:00:30 IST" finished-at="2022-03-25T19:00:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2235" started-at="2022-03-25T19:00:31 IST" finished-at="2022-03-25T19:00:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectWriters(java.lang.String)[pri:4, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectWriters" duration-ms="13320" started-at="2022-03-25T19:00:33 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:00:46 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectWriters -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1025" started-at="2022-03-25T19:00:46 IST" finished-at="2022-03-25T19:00:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2251" started-at="2022-03-25T19:00:47 IST" finished-at="2022-03-25T19:00:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectGenres(java.lang.String)[pri:5, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectGenres" duration-ms="11542" started-at="2022-03-25T19:00:49 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:01:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectGenres -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1039" started-at="2022-03-25T19:01:01 IST" finished-at="2022-03-25T19:01:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2272" started-at="2022-03-25T19:01:02 IST" finished-at="2022-03-25T19:01:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectGenres(java.lang.String)[pri:5, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectGenres" duration-ms="11967" started-at="2022-03-25T19:01:04 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:01:16 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectGenres -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1030" started-at="2022-03-25T19:01:16 IST" finished-at="2022-03-25T19:01:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2308" started-at="2022-03-25T19:01:17 IST" finished-at="2022-03-25T19:01:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectMaturityRating(java.lang.String)[pri:6, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectMaturityRating" duration-ms="13614" started-at="2022-03-25T19:01:20 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:01:33 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectMaturityRating -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1088" started-at="2022-03-25T19:01:33 IST" finished-at="2022-03-25T19:01:34 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2269" started-at="2022-03-25T19:01:34 IST" finished-at="2022-03-25T19:01:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectMaturityRating(java.lang.String)[pri:6, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectMaturityRating" duration-ms="11848" started-at="2022-03-25T19:01:37 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:01:48 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectMaturityRating -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1087" started-at="2022-03-25T19:01:48 IST" finished-at="2022-03-25T19:01:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2274" started-at="2022-03-25T19:01:50 IST" finished-at="2022-03-25T19:01:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectMovieRatingScore(java.lang.String)[pri:7, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectMovieRatingScore" duration-ms="11361" started-at="2022-03-25T19:01:52 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:02:03 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[A Clockwork Orange]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectMovieRatingScore -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1100" started-at="2022-03-25T19:02:03 IST" finished-at="2022-03-25T19:02:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method status="PASS" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testSessionSetUp" is-config="true" duration-ms="2281" started-at="2022-03-25T19:02:04 IST" finished-at="2022-03-25T19:02:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSessionSetUp -->
+        <test-method status="PASS" signature="testMovieMetadataOnWebHasCorrectMovieRatingScore(java.lang.String)[pri:7, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testMovieMetadataOnWebHasCorrectMovieRatingScore" duration-ms="12224" started-at="2022-03-25T19:02:07 IST" data-provider="popularMovieTitles" finished-at="2022-03-25T19:02:19 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[The Dark Knight Rises]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMovieMetadataOnWebHasCorrectMovieRatingScore -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchTest@1d8d30f7]" name="testTearDown" is-config="true" duration-ms="1113" started-at="2022-03-25T19:02:19 IST" finished-at="2022-03-25T19:02:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+      </class> <!-- com.qt.qualithon.test.MovieSearchTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

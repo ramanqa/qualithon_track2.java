@@ -12,7 +12,7 @@ public class TestSession {
     public static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
     public TestSession(WebDriver driver){
-        this.webDriver.set(driver);
+        TestSession.webDriver.set(driver);
     }
 
     /**
@@ -65,6 +65,7 @@ public class TestSession {
      * @return    instance of TestSession with local google chrome browser
      **/
     public static TestSession ChromeTestSession(){
+    	System.setProperty("webdriver.chrome.driver", "C:\Users\vicky.bhatia\eclipse-workspace\qualithon_track2\src\test\resources\chromedriver.exe");
         return new TestSession(new ChromeDriver());
     }
 
