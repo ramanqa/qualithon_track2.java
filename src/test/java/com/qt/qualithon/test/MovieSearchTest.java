@@ -133,9 +133,15 @@ public class MovieSearchTest {
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
 
+<<<<<<< HEAD
         
         // System.out.println(movieOnImdbWeb.writers().equals(movie.writers()));
         assertThat(movieOnImdbWeb.writers().equals(movie.writers()));
+=======
+        System.out.println("IMDB :------->"+movieOnImdbWeb.writers());
+        System.out.println("OMDB :------->"+movie.writers());
+        assertThat(movieOnImdbWeb.writers()).equals(movie.writers());
+>>>>>>> ee88ac70a01cf0ce4568e037c2b1161c66ef52bc
     }
 
     /**
@@ -155,8 +161,11 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
+<<<<<<< HEAD
         System.out.println(movieOnImdbWeb.genres());
         System.out.println(movie.genres());
+=======
+>>>>>>> ee88ac70a01cf0ce4568e037c2b1161c66ef52bc
         assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
     }
 
@@ -167,6 +176,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
+<<<<<<< HEAD
     // @Test(dataProvider = "popularMovieTitles")
     // public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
     //     // NOT IMPLEMENTED
@@ -178,6 +188,13 @@ public class MovieSearchTest {
     //     // .firstMovieResult
     //     // throw new Exception("Test Pending");
     // }
+=======
+    @Test(dataProvider = "popularMovieTitles")
+    public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
+        // NOT IMPLEMENTED
+        throw new Exception("Test Pending");
+    }
+>>>>>>> ee88ac70a01cf0ce4568e037c2b1161c66ef52bc
 
     /**
      * test that movie rating score on movie page (IMDB Rating, Tomatometer) is correct compared to the
@@ -186,9 +203,9 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    // @Test(dataProvider = "popularMovieTitles")
-    // public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
-    //     // NOT IMPLEMENTED
-    //     throw new Exception("Test Pending");
-    // }
+    @Test(dataProvider = "popularMovieTitles")
+    public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
+        // NOT IMPLEMENTED
+        throw new Exception("Test Pending");
+    }
 }
