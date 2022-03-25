@@ -19,8 +19,8 @@ public class Movie{
     List<String> genres;
     List<String> writers;
     String rating ;
-    String reviewRating ;
-
+    //String reviewRating ;
+    JSONArray reviewRating ;
     
 
 	
@@ -172,24 +172,35 @@ public class Movie{
 	
 	
 	/**
-	 * get imdb movie rating 
+	 * get movie rating 
 	 * 
 	 * @return movie review rating 
 	 */
-	public String reviewRating() {
+	public String reviewRating(String source) {
 		//System.out.println(reviewRating);
-		return reviewRating;
+		String review = null ;
+		for(int i = 0; i< reviewRating.length();i++ ) {
+			JSONObject obj = (JSONObject) reviewRating.get(i);
+			
+			if(obj.getString("Source").equalsIgnoreCase(source)) {
+				review = obj.getString("Value");
+			} 
+		}
+		
+		return review;
 	}
 	
 	
 	/**
-	 * set imdb movie rating
+	 * set  movie rating
 	 * 
 	 * @param jsonArray ratings array
 	 */
 	public void setReviewRating(JSONArray jsonArray) {
-		JSONObject obj = (JSONObject) jsonArray.get(0);
-		this.reviewRating = obj.getString("Value");
+	
+		//JSONObject obj = (JSONObject) jsonArray.get(0);
+		//this.reviewRating = obj.getString("Value");
+		this.reviewRating = jsonArray ;
 	}
 	
 

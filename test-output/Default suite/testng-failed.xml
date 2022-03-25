@@ -5,9 +5,12 @@
     <classes>
       <class name="com.qt.qualithon.test.MovieSearchRottenTomatoesTest">
         <methods>
-          <include name="testMovieMetadataOnWebHasCorrectDirectorName" invocation-numbers="0"/>
+          <include name="testMovieMetadataOnWebHasCorrectReleaseYear" invocation-numbers="1"/>
           <include name="testSessionSetUp"/>
+          <include name="testMovieMetadataOnWebHasCorrectWriters" invocation-numbers="1"/>
           <include name="testTearDown"/>
+          <include name="testMovieMetadataOnWebHasCorrectGenres" invocation-numbers="0 1"/>
+          <include name="testMovieMetadataOnWebHasCorrectMaturityRating" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.qt.qualithon.test.MovieSearchRottenTomatoesTest -->
     </classes>

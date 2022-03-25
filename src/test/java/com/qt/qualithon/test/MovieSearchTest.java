@@ -189,7 +189,7 @@ public class MovieSearchTest {
 
     	// get Movie metadata from http://www.omdbapi.com/
     	Movie movie = new OMDbAPI().getMovie(title);
-    	assertThat(movieOnImdbWeb.reviewRating()).isEqualTo(movie.reviewRating());
+    	assertThat(movieOnImdbWeb.reviewRating()).isEqualTo(movie.reviewRating("Internet Movie Database"));
     	
     	
         //throw new Exception("Test Pending");

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="6" total="8" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-24T16:34:27 IST" name="Default suite" finished-at="2022-03-24T16:36:15 IST" duration-ms="108645">
+  <suite started-at="2022-03-25T14:41:03 IST" name="Default suite" finished-at="2022-03-25T14:42:38 IST" duration-ms="95357">
     <groups>
     </groups>
-    <test started-at="2022-03-24T16:34:27 IST" name="Default test" finished-at="2022-03-24T16:36:15 IST" duration-ms="108645">
+    <test started-at="2022-03-25T14:41:03 IST" name="Default test" finished-at="2022-03-25T14:42:38 IST" duration-ms="95357">
       <class name="com.qt.qualithon.test.MovieSearchRottenTomatoesTest">
-        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@4bb33f74]" started-at="2022-03-24T16:34:27 IST" name="testSessionSetUp" finished-at="2022-03-24T16:34:30 IST" duration-ms="3570" status="PASS">
+        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@6f46426d]" started-at="2022-03-25T14:41:03 IST" name="testSessionSetUp" finished-at="2022-03-25T14:41:07 IST" duration-ms="3835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSessionSetUp -->
-        <test-method signature="testMovieMetadataOnWebHasCorrectDirectorName(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@4bb33f74]" started-at="2022-03-24T16:34:30 IST" name="testMovieMetadataOnWebHasCorrectDirectorName" data-provider="popularMovieTitles" finished-at="2022-03-24T16:35:23 IST" duration-ms="52474" status="PASS">
+        <test-method signature="testSearchByExactMovieTitleReturnsMovieAsFirstResult(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@6f46426d]" started-at="2022-03-25T14:41:07 IST" name="testSearchByExactMovieTitleReturnsMovieAsFirstResult" data-provider="popularMovieTitles" finished-at="2022-03-25T14:41:44 IST" duration-ms="36641" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,16 +21,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMovieMetadataOnWebHasCorrectDirectorName -->
-        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@4bb33f74]" started-at="2022-03-24T16:35:23 IST" name="testTearDown" finished-at="2022-03-24T16:35:23 IST" duration-ms="430" status="PASS">
+        </test-method> <!-- testSearchByExactMovieTitleReturnsMovieAsFirstResult -->
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@6f46426d]" started-at="2022-03-25T14:41:44 IST" name="testTearDown" finished-at="2022-03-25T14:41:44 IST" duration-ms="751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->
-        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@4bb33f74]" started-at="2022-03-24T16:35:23 IST" name="testSessionSetUp" finished-at="2022-03-24T16:35:25 IST" duration-ms="2282" status="PASS">
+        <test-method is-config="true" signature="testSessionSetUp()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@6f46426d]" started-at="2022-03-25T14:41:44 IST" name="testSessionSetUp" finished-at="2022-03-25T14:41:47 IST" duration-ms="2575" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSessionSetUp -->
-        <test-method signature="testMovieMetadataOnWebHasCorrectDirectorName(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@4bb33f74]" started-at="2022-03-24T16:35:25 IST" name="testMovieMetadataOnWebHasCorrectDirectorName" data-provider="popularMovieTitles" finished-at="2022-03-24T16:36:15 IST" duration-ms="49518" status="PASS">
+        <test-method signature="testSearchByExactMovieTitleReturnsMovieAsFirstResult(java.lang.String)[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@6f46426d]" started-at="2022-03-25T14:41:47 IST" name="testSearchByExactMovieTitleReturnsMovieAsFirstResult" data-provider="popularMovieTitles" finished-at="2022-03-25T14:42:38 IST" duration-ms="50859" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -40,8 +40,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMovieMetadataOnWebHasCorrectDirectorName -->
-        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@4bb33f74]" started-at="2022-03-24T16:36:15 IST" name="testTearDown" finished-at="2022-03-24T16:36:15 IST" duration-ms="310" status="PASS">
+        </test-method> <!-- testSearchByExactMovieTitleReturnsMovieAsFirstResult -->
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.qt.qualithon.test.MovieSearchRottenTomatoesTest@6f46426d]" started-at="2022-03-25T14:42:38 IST" name="testTearDown" finished-at="2022-03-25T14:42:38 IST" duration-ms="636" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->

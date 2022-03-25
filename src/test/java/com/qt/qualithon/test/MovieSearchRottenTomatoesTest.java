@@ -115,17 +115,17 @@ public class MovieSearchRottenTomatoesTest {
      * @param   title   movie title to search
      *
      **/
- /*   @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectWriters(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
+        assertThat(movieOnRtWeb.writers()).isEqualTo(movie.writers());
     }
 
     /**
@@ -135,17 +135,17 @@ public class MovieSearchRottenTomatoesTest {
      * @param   title   movie title to search
      *
      **/
-/*    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectGenres(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
-        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+        MoviePage movieOnRtWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
+        assertThat(movieOnRtWeb.genres()).isEqualTo(movie.genres());
     }
 
     /**
@@ -155,18 +155,18 @@ public class MovieSearchRottenTomatoesTest {
      * @param   title   movie title to search
      *
      **/
-/*    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
         // NOT IMPLEMENTED
     	// get MoviePage from imdb/rottentomato
-    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    	MoviePage movieOnRtWeb = new WebApp(this.testSession)
     	            .launch()
     	            .search(title)
     	            .firstMovieResult();
 
     	// get Movie metadata from http://www.omdbapi.com/
     	Movie movie = new OMDbAPI().getMovie(title);
-    	assertThat(movieOnImdbWeb.rating()).isEqualTo(movie.rating());
+    	assertThat(movieOnRtWeb.rating()).isEqualTo(movie.rating());
     	
        // throw new Exception("Test Pending");
     }
@@ -178,24 +178,23 @@ public class MovieSearchRottenTomatoesTest {
      * @param   title   movie title to search
      *
      **/
- /*   @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
         // NOT IMPLEMENTED
     	
     	
     	// get MoviePage from imdb/rottentomato
-    	MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+    	MoviePage movieOnRtWeb = new WebApp(this.testSession)
     	            .launch()
     	            .search(title)
     	            .firstMovieResult();
 
     	// get Movie metadata from http://www.omdbapi.com/
     	Movie movie = new OMDbAPI().getMovie(title);
-    	assertThat(movieOnImdbWeb.reviewRating()).isEqualTo(movie.reviewRating());
+    	assertThat(movieOnRtWeb.reviewRating()).isEqualTo(movie.reviewRating("Rotten Tomatoes"));
     	
     	
         //throw new Exception("Test Pending");
     }
     
-    */
 }
