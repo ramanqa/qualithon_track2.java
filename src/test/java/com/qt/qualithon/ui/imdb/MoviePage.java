@@ -74,6 +74,27 @@ public class MoviePage extends Page{
     public List<String> genres(){
         List<String> genres = new ArrayList<>();
         
+        List<WebElement> credits = this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(
+                  By.cssSelector("li.ipc-metadata-list__item")));
+
+           
+            for(WebElement credit:credits){
+                try{
+                    if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Genres")){
+                        
+                        List<WebElement> genresElements = credit.findElements(By.cssSelector("a"));
+                       
+
+                        for(int i =0; i <= genresElements.size()-1 ; i++){
+                          genres.add(genresElements.get(i).getText());
+                      }
+                        
+                     
+                        break;
+                    }
+                }catch(NoSuchElementException e){}
+            }
         // if genres list is empty throw exception
         if(genres.isEmpty()){
             throw new NoSuchElementException("Could not lookup genres on Movie page");
@@ -111,7 +132,7 @@ public class MoviePage extends Page{
                 if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Writers")){
                     // traverse list of writers on page to add to writers list
                     List<WebElement> writersElements = credit.findElements(By.cssSelector("a"));
-                    for(int i = writersElements.size()-1; i >= 0 ; i--){
+                    for(int i =0; i <= writersElements.size()-1 ; i++){
                         writers.add(writersElements.get(i).getText());
                     }
                     break;
@@ -124,6 +145,19 @@ public class MoviePage extends Page{
             throw new NoSuchElementException("Could not lookup Writers on movie page");
         }
         return writers;
+    }
+    
+    /**
+     * get imdb rating
+     *
+     * @return    imdb rating
+     **/
+    public String imdbrating(){
+        return this.testSession.driverWait().until(
+            ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("div[class='sc-f6306ea-0 cNGXvE rating-bar__base-button']")
+            ) 
+        ).getText();
     }
 
 }
