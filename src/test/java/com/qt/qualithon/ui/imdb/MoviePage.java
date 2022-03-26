@@ -82,7 +82,7 @@ public class MoviePage extends Page{
         for(WebElement credit:credits){
             try{
                 if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Genres")){
-                    // traverse list of writers on page to add to writers list
+                    // traverse list of genres on page to add to genres list
                     List<WebElement> genresElements = credit.findElements(By.cssSelector("a"));
                     for(int i = 0; i <  genresElements.size(); i++){
                         genres.add(genresElements.get(i).getText());
@@ -114,7 +114,26 @@ public class MoviePage extends Page{
         ).getText();
     }
 
-    // public String 
+    // here is rating from imdb
+    public String rating()
+    {
+        return this.testSession.driverWait().until(
+            ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("div[data-testid='hero-rating-bar__aggregate-rating__score']")
+            ) 
+        ).getText();
+    }
+
+    //here is rated from imdb
+    public String maturityRating()
+    { 
+        return this.testSession.driverWait().until(
+            ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector("ul[data-testid='hero-title-block__metadata'] li[role='presentation']:nth-child(2)")
+            ) 
+        ).getText();
+        
+    }
 
     /**
      * get list of movie writers
@@ -126,20 +145,19 @@ public class MoviePage extends Page{
         List<WebElement> credits = this.testSession.driverWait().until(
             ExpectedConditions.presenceOfAllElementsLocatedBy(
               By.cssSelector("li.ipc-metadata-list__item")));
-            //   System.out.println(credits);
 
         // traverse credits sections to find the section with Writers
         for(WebElement credit:credits){
             try{
-                // if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Writers")){
+                if(credit.findElement(By.cssSelector("a")).getText().equalsIgnoreCase("Writers") || credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Writers")){
                     // traverse list of writers on page to add to writers list
-                    List<WebElement> writersElements = credit.findElements(By.cssSelector("a"));
+                    List<WebElement> writersElements = credit.findElements(By.cssSelector("a[class='ipc-metadata-list-item__list-content-item ipc-metadata-list-item__list-content-item--link']"));
                     for(int i = 0; i < writersElements.size() ; i++){
                             writers.add(writersElements.get(i).getText());
                             // System.out.println(writersElements.get(i).getText());
                     }
                     break;
-                // }
+                }
             }catch(NoSuchElementException e){}
         }
 

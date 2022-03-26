@@ -1,5 +1,6 @@
 package com.qt.qualithon.test;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.stream.Collector;
@@ -22,7 +23,6 @@ import com.qt.qualithon.api.omdb.*;
 public class MovieSearchTest {
 
     public TestSession testSession;
-    private Object assertThat;
 
     @BeforeMethod
     public void testSessionSetUp(){
@@ -55,18 +55,34 @@ public class MovieSearchTest {
      * and see the movie metadata
      *
      * @param   title   movie title to search
+     * @throws UnsupportedEncodingException
      *
      **/
     @Test(dataProvider = "popularMovieTitles")
-    public void testSearchByExactMovieTitleReturnsMovieAsFirstResult(String title){
+    public void testSearchByExactMovieTitleReturnsMovieAsFirstResult(String title) throws UnsupportedEncodingException{
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
             .launch()
             .search(title)
             .firstMovieResult();
 
-        // Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.title()).isEqualTo(title);
+        Movie movie= new OMDbAPI().getMovie(title);
+        try {
+            movie = new OMDbAPI().getMovie(title);
+        } catch (UnsupportedEncodingException e) {
+            System.out.println("\n\nMovie title not able to fetch from OMDb site.\n\n");
+            e.printStackTrace();
+        }
+        
+        //to test movie title
+        System.out.println("\n\nTesting Movie Title");
+        System.out.println("MovieOnImdbTitle:"+movieOnImdbWeb.title());
+        System.out.println("MovieOnOmdbTitle:"+movie.title());
+        System.out.println("Testcase:"+ movieOnImdbWeb.title().equals(movie.title())+"\n\n");
+
+
+
+        assertThat(movieOnImdbWeb.title()).isEqualTo(movie.title());
     }
 
     /**
@@ -86,6 +102,15 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
+
+        //to test movie ReleaseYear
+        System.out.println("\n\nTesting Movie Title");
+        System.out.println("MovieOnImdbRealeseYear:"+movieOnImdbWeb.title());
+        System.out.println("MovieOnOmdbRealeseYear:"+movie.title());
+        System.out.println("Testcase:"+movieOnImdbWeb.releaseYear().substring(0,4).equals(movie.releaseYear())+"\n\n");
+
+
+
         assertThat(movieOnImdbWeb.releaseYear().substring(0,4)).isEqualTo(movie.releaseYear());
     }
 
@@ -110,6 +135,13 @@ public class MovieSearchTest {
             // System.out.println("Movie on IMDB"+movieOnImdbWeb.director());
             // System.out.println("MOvie on OMDB"+movie.director());
 
+
+            System.out.println("\n\nTesting Movie DirectorName");
+            System.out.println("MovieOnImdbDirector:"+movieOnImdbWeb.director());
+            System.out.println("MovieOnOmdbDirector:"+movie.director());
+            System.out.println("Testcase:"+movieOnImdbWeb.director().equals(movie.director())+"\n\n");
+    
+
         //error resolved here
         //error was omdb api was giving langiage instead of director
         assertThat(movieOnImdbWeb.director()).isEqualTo(movie.director());
@@ -133,15 +165,14 @@ public class MovieSearchTest {
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
 
-<<<<<<< HEAD
+        System.out.println("\n\nTesting Movie WritersName");
+            System.out.println("MovieOnImdbWriters:"+movieOnImdbWeb.writers());
+            System.out.println("MovieOnOmdbWriters:"+movie.writers());
+            System.out.println("Testcase:"+movieOnImdbWeb.writers().equals(movie.writers())+"\n\n");
+
         
         // System.out.println(movieOnImdbWeb.writers().equals(movie.writers()));
-        assertThat(movieOnImdbWeb.writers().equals(movie.writers()));
-=======
-        System.out.println("IMDB :------->"+movieOnImdbWeb.writers());
-        System.out.println("OMDB :------->"+movie.writers());
-        assertThat(movieOnImdbWeb.writers()).equals(movie.writers());
->>>>>>> ee88ac70a01cf0ce4568e037c2b1161c66ef52bc
+        assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
     }
 
     /**
@@ -161,11 +192,14 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-<<<<<<< HEAD
-        System.out.println(movieOnImdbWeb.genres());
-        System.out.println(movie.genres());
-=======
->>>>>>> ee88ac70a01cf0ce4568e037c2b1161c66ef52bc
+
+        //test to check Genres
+        System.out.println("\n\nTesting Movie genres");
+        System.out.println("MovieOnImdbGenres:"+movieOnImdbWeb.genres());
+        System.out.println("MovieOnOmdbGenres:"+movie.genres());
+        System.out.println("Testcase:"+movieOnImdbWeb.genres().equals(movie.genres())+"\n\n");
+
+
         assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
     }
 
@@ -176,25 +210,22 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-<<<<<<< HEAD
-    // @Test(dataProvider = "popularMovieTitles")
-    // public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
-    //     // NOT IMPLEMENTED
-    //     MoviePage movieOnImdbWeb = new WebApp(this.testSession).launch().search(title)
-    //     .firstMovieResult();
-
-    //     Movie movie = new OMDbAPI().getMovie(title);
-    //     assertThat(movieOnImdbWeb.)
-    //     // .firstMovieResult
-    //     // throw new Exception("Test Pending");
-    // }
-=======
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
         // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+        MoviePage movieOnImdbWeb = new WebApp(this.testSession).launch().search(title)
+        .firstMovieResult();
+
+        Movie movie = new OMDbAPI().getMovie(title);
+
+            //test to check maturity
+       System.out.println("\n\nTesting Movie MaturityRating");
+       System.out.println("MovieOnImdbMaturityRating:"+movieOnImdbWeb.maturityRating());
+       System.out.println("MovieOnOmdbMaturityRating:"+movie.maturityRating());
+       System.out.println("Testcase:"+movieOnImdbWeb.maturityRating().equals(movie.maturityRating())+"\n\n");
+
+        assertThat(movie.maturityRating()).isEqualTo(movieOnImdbWeb.maturityRating());
     }
->>>>>>> ee88ac70a01cf0ce4568e037c2b1161c66ef52bc
 
     /**
      * test that movie rating score on movie page (IMDB Rating, Tomatometer) is correct compared to the
@@ -205,7 +236,20 @@ public class MovieSearchTest {
      **/
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+        // // NOT IMPLEMENTED
+        // throw new Exception("Test Pending");
+        MoviePage movieOnImdbWeb = new WebApp(this.testSession).launch().search(title)
+        .firstMovieResult();
+
+        Movie movie = new OMDbAPI().getMovie(title);
+
+          //test to check Rating
+          System.out.println("\n\nTesting Movie Rating");
+          System.out.println("MovieOnImdbRating:"+movieOnImdbWeb.rating().substring(0,3));
+          System.out.println("MovieOnOmdbRating:"+movie.rating());
+          System.out.println("Testcase:"+(movieOnImdbWeb.rating().substring(0,3)).equals(movie.rating())+"\n\n");
+
+        assertThat(movie.rating()).isEqualTo((movieOnImdbWeb.rating().substring(0,3)));
+      
     }
 }

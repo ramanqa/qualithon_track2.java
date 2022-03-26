@@ -15,6 +15,7 @@ public class Movie{
     String releaseYear;
     String director;
     String rating;
+    String maturityRating;
     List<String> genres;
     List<String> writers;
 
@@ -38,6 +39,16 @@ public class Movie{
      **/
     public String title(){
         return this.title;
+    }
+
+    //maturity rating
+    public void setMaturityRating(String maturityRating)
+    {
+        this.maturityRating = maturityRating;
+    } 
+
+    public String maturityRating(){
+        return this.maturityRating;
     }
 
     /**
@@ -73,14 +84,26 @@ public class Movie{
     public String director(){
         return this.director;
     }
-    /////////////test case????///////////////////////
-    public String rating(){
-        return this.rating;
-    }
+
+    /**
+     * set movie genre list
+     *
+     * @param   rating    list of movie genres
+     **/
     public void setRating(String rating)
     {
         this.rating = rating;
     }
+
+    /**
+     * get movie rating name
+     *
+     * @return    movie rating name as string
+     **/
+    public String rating(){
+        return this.rating;
+    }
+
 
     /**
      * set movie genre list
@@ -164,6 +187,7 @@ public class Movie{
             +"Director: " + this.director + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
             +"Writers: " + String.join(",", this.writers) + "\n"
-            +"Rating: "+ this.rating; 
+            +"Rating: "+ this.rating + "\n"
+            +"MaturityRating"+this.maturityRating; 
     }
 }
