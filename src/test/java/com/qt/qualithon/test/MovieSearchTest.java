@@ -81,7 +81,8 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.releaseYear()).isEqualTo(movie.releaseYear());
+       
+      assertThat((movieOnImdbWeb.releaseYear()).substring(0,4)).isEqualTo(movie.releaseYear());
     }
 
     /**
@@ -121,6 +122,7 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
+        
         assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
     }
 
@@ -141,7 +143,8 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
-        assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
+      
+       assertThat(movieOnImdbWeb.genres()).isEqualTo(movie.genres());
     }
 
     /**
@@ -153,8 +156,20 @@ public class MovieSearchTest {
      **/
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+    	  // get MoviePage from imdb/rottentomato
+        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+            .launch()
+            .search(title)
+            .firstMovieResult();
+        
+        Movie movie = new OMDbAPI().getMovie(title);
+String [] expectedmaturityrating=movieOnImdbWeb.releaseYear().split("\n");
+
+       assertThat(expectedmaturityrating[1]).isEqualTo(movie.maturityrating());
+        
+       
+      
+       
     }
 
     /**
@@ -166,7 +181,14 @@ public class MovieSearchTest {
      **/
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+    	  MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+                .launch()
+                .search(title)
+                .firstMovieResult();
+
+          Movie movie = new OMDbAPI().getMovie(title);
+         String [] expectedimdb=movieOnImdbWeb.imdbrating().split("\n");
+       assertThat(expectedimdb[1]).isEqualTo(movie.imdbrating());
+        
     }
 }
