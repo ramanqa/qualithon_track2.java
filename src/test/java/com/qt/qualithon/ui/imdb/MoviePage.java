@@ -4,7 +4,6 @@ import com.qt.qualithon.TestSession;
 import com.qt.qualithon.ui.Page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.NoSuchElementException;
@@ -16,18 +15,20 @@ import java.util.ArrayList;
  * page object class represents elements and actions on the IMDb Movie Page
  **/
 public class MoviePage extends Page{
-
     public MoviePage(TestSession testSession){
         super(testSession);
 
         // adjust page for tablet formfactor
-        WebElement showMoreLink = this.testSession.driverWait().until(
-            ExpectedConditions.presenceOfElementLocated(
-              By.cssSelector("a[data-testid='title-pc-expand-more-button']")));
-       
-        if(showMoreLink.isDisplayed()){
-            showMoreLink.click();
+        // String uRL = this.testSession.webDriver.getCurrentUrl();
+        try{
+            WebElement showMoreLink = this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfElementLocated(
+                  By.cssSelector("a[data-testid='title-pc-expand-more-button']")));
+            if(showMoreLink.isDisplayed()){
+                showMoreLink.click();
+            }
         }
+        catch(Exception e){}
 
     }
 
@@ -168,4 +169,42 @@ public class MoviePage extends Page{
         return writers;
     }
 
+
+
+    //RottenTomatoes
+    public String titleOnRottenTomatoes(){
+        System.out.println("\n\nOnRottenTomatoes Title:"+this.testSession.driverWait().until(
+            ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("h1[slot='title']")
+            ) 
+        ).getText()+"\n\n");
+        return this.testSession.driverWait().until(
+            ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("h1[slot='title']")
+            ) 
+        ).getText();
+    }
+
+
+    // /**
+    //  * get movie director name ON Rotten Tomatoes
+    //  *
+    //  * @return    movie director name
+    //  **/
+    // public String directorOnRottenTomatoes(){
+    //     List<WebElement> credits = this.testSession.driverWait().until(
+    //         ExpectedConditions.presenceOfAllElementsLocatedBy(
+    //           By.cssSelector("li.ipc-metadata-list__item")));
+
+    //     // traverse credits sections to find the section with Directors
+    //     for(WebElement credit:credits){
+    //         try{
+    //             if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Director")){
+    //                 // find director name from child element of section
+    //                 return credit.findElement(By.cssSelector("a")).getText();
+    //             }
+    //         }catch(NoSuchElementException e){}
+    //     }
+    //     throw new NoSuchElementException("Failed to lookup Director on page");
+    // }
 }

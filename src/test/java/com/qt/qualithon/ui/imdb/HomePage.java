@@ -4,12 +4,10 @@ import com.qt.qualithon.TestSession;
 import com.qt.qualithon.ui.Page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.JavascriptExecutor;
 
-import java.util.List;
 
 /**
  * represents IMDb Web Home Page elements and ui actions (page object)
@@ -35,6 +33,21 @@ public class HomePage extends Page {
         searchInput.sendKeys(movieTitle);
         searchInput.submit();
 
+        return new ResultsPage(this.testSession);
+    }
+
+
+
+    public ResultsPage searchRottenTomatoes(String movieTitle){
+
+        System.out.println(movieTitle);
+        WebElement searchInput = this.testSession.driverWait().until(
+            ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("input[data-qa='search-input']")
+            )
+        );
+        searchInput.sendKeys(movieTitle);
+        searchInput.sendKeys(Keys.ENTER);
         return new ResultsPage(this.testSession);
     }
 }

@@ -2,10 +2,8 @@ package com.qt.qualithon.ui.imdb;
 
 import com.qt.qualithon.TestSession;
 import com.qt.qualithon.ui.Page;
-import com.qt.qualithon.model.Movie;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.WebElement;
 
@@ -34,6 +32,20 @@ public class ResultsPage extends Page{
         return resultLinks;
     }
 
+    public List<WebElement> movieResultLinksOnRottenTomatoes(){
+        List<WebElement> resultLinks = this.testSession.driverWait().until(
+            ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                By.cssSelector("search-page-result[slot='movie'] ul[slot='list'] a")
+            )
+        );
+        System.out.println(this.testSession.driverWait().until(
+            ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                By.cssSelector("search-page-result[slot='movie'] ul[slot='list'] a")
+            )
+        ));
+        return resultLinks;
+    }
+
     /**
      * open first movie result link from result page and return movie page page object
      *
@@ -41,6 +53,11 @@ public class ResultsPage extends Page{
      **/
     public MoviePage firstMovieResult(){
         this.movieResultLinks().get(0).click();
+        return new MoviePage(this.testSession);
+    }
+
+    public MoviePage firstMovieOnResultRottenTomatoes(){
+        this.movieResultLinksOnRottenTomatoes().get(0).click();
         return new MoviePage(this.testSession);
     }
 }
