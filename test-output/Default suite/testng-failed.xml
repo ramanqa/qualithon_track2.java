@@ -6,8 +6,14 @@
       <class name="com.qt.qualithon.test.MovieSearchTest">
         <methods>
           <include name="testSessionSetUp"/>
+          <include name="testSearchByExactMovieTitleReturnsMovieAsFirstResult"/>
+          <include name="testMovieMetadataOnWebHasCorrectDirectorName"/>
+          <include name="testMovieMetadataOnWebHasCorrectGenres"/>
+          <include name="testMovieMetadataOnWebHasCorrectMaturityRating"/>
+          <include name="testMovieMetadataOnWebHasCorrectReleaseYear"/>
           <include name="testTearDown"/>
-          <include name="testMovieMetadataOnWebHasCorrectWriters" invocation-numbers="1"/>
+          <include name="testMovieMetadataOnWebHasCorrectWriters"/>
+          <include name="testMovieMetadataOnWebHasCorrectMovieRatingScore"/>
         </methods>
       </class> <!-- com.qt.qualithon.test.MovieSearchTest -->
     </classes>
