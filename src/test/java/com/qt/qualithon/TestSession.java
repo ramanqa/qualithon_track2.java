@@ -65,6 +65,7 @@ public class TestSession {
      * @return    instance of TestSession with local google chrome browser
      **/
     public static TestSession ChromeTestSession(){
+
         return new TestSession(new ChromeDriver());
     }
 
