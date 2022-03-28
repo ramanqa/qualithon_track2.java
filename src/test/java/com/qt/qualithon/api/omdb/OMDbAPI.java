@@ -35,9 +35,15 @@ public class OMDbAPI {
         Movie movie = new Movie();
         movie.setTitle(movieMetadata.getString("Title"));
         movie.setReleaseYear(movieMetadata.getString("Year"));
-        movie.setDirector(movieMetadata.getString("Language"));
+        
+        //error resolved here
+        //from setDirector giving language
+        movie.setDirector(movieMetadata.getString("Director"));
         movie.setGenres(movieMetadata.getString("Genre"));
         movie.setWriters(movieMetadata.getString("Writer"));
+
+        movie.setRating(movieMetadata.getString("imdbRating"));
+        movie.setMaturityRating(movieMetadata.getString("Rated"));
         return  movie;
     }
 

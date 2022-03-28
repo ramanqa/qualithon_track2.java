@@ -2,6 +2,7 @@ package com.qt.qualithon.model;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Movie model represents the metadata of any movie
@@ -12,6 +13,8 @@ public class Movie{
     String title;
     String releaseYear;
     String director;
+    String rating;
+    String maturityRating;
     List<String> genres;
     List<String> writers;
 
@@ -35,6 +38,16 @@ public class Movie{
      **/
     public String title(){
         return this.title;
+    }
+
+    //maturity rating
+    public void setMaturityRating(String maturityRating)
+    {
+        this.maturityRating = maturityRating;
+    } 
+
+    public String maturityRating(){
+        return this.maturityRating;
     }
 
     /**
@@ -74,6 +87,26 @@ public class Movie{
     /**
      * set movie genre list
      *
+     * @param   rating    list of movie genres
+     **/
+    public void setRating(String rating)
+    {
+        this.rating = rating;
+    }
+
+    /**
+     * get movie rating name
+     *
+     * @return    movie rating name as string
+     **/
+    public String rating(){
+        return this.rating;
+    }
+
+
+    /**
+     * set movie genre list
+     *
      * @param   genres    list of movie genres
      **/
     public void setGenres(List<String> genres){
@@ -88,6 +121,7 @@ public class Movie{
         for(String genre:commaSeperatedGenres.split(",")){
             this.genres.add(genre.trim());
         }
+        Collections.sort(this.genres);
     }
     /**
      * add movie genre to movie geres list
@@ -141,6 +175,7 @@ public class Movie{
         return this.writers;
     }
 
+
     /**
      * a pretty formated representation of movie metadata
      *
@@ -150,6 +185,8 @@ public class Movie{
       return "Title: " + this.title + " (" + this.releaseYear + ")" + "\n"
             +"Director: " + this.director + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
-            +"Writers: " + String.join(",", this.writers); 
+            +"Writers: " + String.join(",", this.writers) + "\n"
+            +"Rating: "+ this.rating + "\n"
+            +"MaturityRating"+this.maturityRating; 
     }
 }
