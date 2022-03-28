@@ -73,6 +73,20 @@ public class MoviePage extends Page{
      **/
     public List<String> genres(){
         List<String> genres = new ArrayList<>();
+        List<WebElement> credits = this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(
+                		By.xpath("//div[@data-testid='genres']")));
+        for(WebElement credit:credits){
+            try{
+                    List<WebElement> genreElements = credit.findElements(By.cssSelector("a"));
+                    for(int i =0 ; i <= genreElements.size()-1 ; i++){
+                        genres.add(genreElements.get(i).getText());
+                    }
+                    break;
+            }catch(NoSuchElementException e){}
+                 
+                }
+        
         
         // if genres list is empty throw exception
         if(genres.isEmpty()){
@@ -89,9 +103,9 @@ public class MoviePage extends Page{
     public String releaseYear(){
         return this.testSession.driverWait().until(
             ExpectedConditions.presenceOfElementLocated(
-                By.cssSelector("ul[data-testid='hero-title-block__metadata']")
+                By.xpath("//a[@class='ipc-link ipc-link--baseAlt ipc-link--inherit-color sc-52284603-1 ifnKcw']"))
             ) 
-        ).getText();
+        .getText();
     }
 
     /**
@@ -111,12 +125,22 @@ public class MoviePage extends Page{
                 if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Writers")){
                     // traverse list of writers on page to add to writers list
                     List<WebElement> writersElements = credit.findElements(By.cssSelector("a"));
-                    for(int i = writersElements.size()-1; i >= 0 ; i--){
+                    for(int i =0 ; i <= writersElements.size()-1 ; i++){
                         writers.add(writersElements.get(i).getText());
                     }
+                    
                     break;
                 }
-            }catch(NoSuchElementException e){}
+                else if(credit.findElement(By.cssSelector("a")).getText().equalsIgnoreCase("Writers")){
+                    // traverse list of writers on page to add to writers list
+                    List<WebElement> writersElements = credit.findElements(By.cssSelector("a"));
+                    for(int i =1 ; i < writersElements.size()-1 ; i++){
+                        writers.add(writersElements.get(i).getText());
+            }
+                    break;
+                }
+            }
+                catch(NoSuchElementException e){}
         }
 
         // if writers list is empty throw exception
@@ -125,5 +149,23 @@ public class MoviePage extends Page{
         }
         return writers;
     }
-
+    
+    
+    public String maturityrating(){
+        return this.testSession.driverWait().until(
+            ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//div[@class='sc-94726ce4-3 eSKKHi']//li[2]"))
+            ) 
+        .getText();
+    }
+    
+    
+    public String movierating(){
+        return this.testSession.driverWait().until(
+            ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//span[@class='sc-7ab21ed2-1 jGRxWM']"))
+            ) 
+        .getText();
+    
+    }
 }

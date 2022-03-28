@@ -3,12 +3,15 @@ package com.qt.qualithon.test;
 import java.lang.reflect.Method;
 
 import org.testng.annotations.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
 
 import static org.assertj.core.api.Assertions.*;
 
 import com.qt.qualithon.TestSession;
 import com.qt.qualithon.ui.imdb.*;
+import com.qt.qualithon.ui.rotten.MoviePageRotten;
+import com.qt.qualithon.ui.rotten.WebAppRotten;
 import com.qt.qualithon.model.Movie;
 import com.qt.qualithon.api.omdb.*;
 
@@ -23,6 +26,8 @@ public class MovieSearchTest {
     @BeforeMethod
     public void testSessionSetUp(){
         // init browser test session
+    	System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\harshit.bhatnagar\\Downloads\\qualithon_track2.java-main\\src\\test\\resources\\webdriver\\\\chromedriver.exe");
         this.testSession = TestSession.ChromeTestSession();
     }
 
@@ -62,6 +67,8 @@ public class MovieSearchTest {
             .firstMovieResult();
 
         assertThat(movieOnImdbWeb.title()).isEqualTo(title);
+        
+      
     }
 
     /**
@@ -153,8 +160,17 @@ public class MovieSearchTest {
      **/
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMaturityRating(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+    	  // get MoviePage from imdb/rottentomato
+        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+            .launch()
+            .search(title)
+            .firstMovieResult();
+
+        // get Movie metadata from http://www.omdbapi.com/
+        Movie movie = new OMDbAPI().getMovie(title);
+        assertThat(movieOnImdbWeb.maturityrating()).isEqualTo(movie.maturityRating());
+        
+
     }
 
     /**
@@ -166,7 +182,15 @@ public class MovieSearchTest {
      **/
     @Test(dataProvider = "popularMovieTitles")
     public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
-        // NOT IMPLEMENTED
-        throw new Exception("Test Pending");
+    	  // get MoviePage from imdb/rottentomato
+        MoviePage movieOnImdbWeb = new WebApp(this.testSession)
+            .launch()
+            .search(title)
+            .firstMovieResult();
+
+        // get Movie metadata from http://www.omdbapi.com/
+        Movie movie = new OMDbAPI().getMovie(title);
+        assertThat(movieOnImdbWeb.movierating()).isEqualTo(movie.movieRating());
+       
     }
 }

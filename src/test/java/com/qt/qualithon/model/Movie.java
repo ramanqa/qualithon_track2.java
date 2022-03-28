@@ -14,6 +14,8 @@ public class Movie{
     String director;
     List<String> genres;
     List<String> writers;
+    String maturityRating;
+    String movieRating;
 
     public Movie(){
         this.genres = new ArrayList<>();
@@ -146,10 +148,32 @@ public class Movie{
      *
      * @return    pretty formated movie metadata
      **/
+    
+    
+    public void setMaturityRating(String maturityRating){
+        this. maturityRating= maturityRating;
+    }
+    /**
+     * get movie release year
+     *
+     * @return    movie release year
+     **/
+    public String maturityRating(){
+        return this.maturityRating;
+    }
+    
+    public void setMovieRating(String movieRating){
+        this. movieRating= movieRating;
+    }
+   
+    public String movieRating(){
+        return this.movieRating;
+    }
+    
     public String toString(){
       return "Title: " + this.title + " (" + this.releaseYear + ")" + "\n"
             +"Director: " + this.director + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
-            +"Writers: " + String.join(",", this.writers); 
+            +"Writers: " + String.join(",", this.writers) ; 
     }
 }
